@@ -1,0 +1,18 @@
+admin1:
+  image: jayjohnson/springxd-admin
+  container_name: "admin1"
+  hostname: "admin1"
+  user: springxd
+  ports:
+    - "9393:9393"
+  cap_add:
+    - ALL
+    - NET_ADMIN
+    - SYS_ADMIN
+  links:
+    - "hsqldb"
+    - "zookeeper1"
+    - "rabbit1"
+    - "rabbit2"
+    - "rabbit3"
+    - "redis1"
